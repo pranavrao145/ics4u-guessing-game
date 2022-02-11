@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI {
@@ -13,12 +14,14 @@ public class GUI {
   public GUI() {
     // draw you GUI
     drawGUI();
+    // attach the listeners to the buttons
+    attachListeners();
   }
 
   private void drawGUI() {
     frame = new JFrame();
 
-    frame.setSize(500, 300);
+    frame.setSize(350, 300);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     panel = new JPanel();
@@ -56,4 +59,27 @@ public class GUI {
     frame.getContentPane().add(panel);
     frame.setVisible(true);
   }
+
+  private void attachListeners() {
+    btn_1.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_1); }
+    });
+    btn_2.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_2); }
+    });
+    btn_3.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_3); }
+    });
+    btn_4.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_4); }
+    });
+    btn_5.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_5); }
+    });
+    btn_6.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) { handleButtonPress(btn_6); }
+    });
+  }
+
+  private void handleButtonPress(JButton button) {}
 }
