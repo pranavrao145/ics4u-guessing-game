@@ -12,6 +12,8 @@
 	<target name="init">
 		<!-- Create the time stamp -->
 		<tstamp />
+		<!-- Create the lib directory structure used by compile -->
+		<mkdir dir="${lib.dir}" />
 		<!-- Create the build directory structure used by compile -->
 		<mkdir dir="${bin.dir}" />
 	</target>
