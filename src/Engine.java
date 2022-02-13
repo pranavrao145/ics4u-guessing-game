@@ -1,3 +1,15 @@
+/******************************************************************************
+Program: Engine Class (Guessing Game)
+
+Description: This is the engine for this game. This class contains all of the
+methods to run the game itself, such as to intialize and reset the game,
+as well as the event loops.
+
+Author: Pranav Rao
+
+Date: February 12, 2022
+*******************************************************************************/
+
 import java.util.Random;
 import javax.swing.JButton;
 
