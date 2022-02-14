@@ -12,6 +12,7 @@ Date: February 12, 2022
 
 // import all necessary Swing components
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,6 +31,9 @@ public class GUI {
   private JTextArea textarea;
   private JScrollPane scrollPane;
   private JButton[] guessButtons;
+
+  // for clarity, the naming convention used for these variables is
+  // component_camelCaseName
   private JButton btn_quit, btn_restart;
   private JLabel lbl_prompt, lbl_tries, lbl_gamesWon, lbl_gamesLost;
 
@@ -62,6 +66,10 @@ public class GUI {
     lbl_gamesLost = new JLabel("Games lost: 0");
     lbl_prompt = new JLabel("Pick a number: ");
 
+    // set the correct colours on the labels declared above
+    lbl_gamesWon.setForeground(Color.GREEN);
+    lbl_gamesLost.setForeground(Color.RED);
+
     // create an array of buttons, which will represent the six buttons that the
     // user will use to guess
     guessButtons = new JButton[6];
@@ -73,7 +81,7 @@ public class GUI {
 
     // make new buttons to quit and restart the program
     btn_quit = new JButton("Quit");
-    btn_restart = new JButton("Restart");
+    btn_restart = new JButton("Forfeit and Restart");
 
     // initialize a textarea with the dimensions of 5x30 and make it
     // non-editable

@@ -93,9 +93,9 @@ public class Engine {
   // game). This method takes nothing and returns nothing.
   private static void runGameEventLoop() {
     currentRandomNumber =
-        generator.nextInt(5) +
+        generator.nextInt(6) +
         1; // at the start of each game, generate a random number and store it
-           // in teh currentRandomNumber variable
+           // in the currentRandomNumber variable
 
     // while the game is marked as running
     while (gameRunning) {
