@@ -14,6 +14,7 @@ Date: February 12, 2022
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -115,9 +116,9 @@ public class GUI {
     // for each of the buttons, attach a listener to handle when the button is
     // pressed
     for (int i = 0; i < 6; i++) {
-      JButton currentButton = guessButtons[i];
+      final JButton currentButton = guessButtons[i];
       currentButton.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(final ActionEvent e) {
           handleButtonPress(currentButton);
         }
       });
@@ -126,7 +127,7 @@ public class GUI {
     // attach a listner to the quit button that will make it stop the engine
     // when clicked
     btn_quit.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
+      public void actionPerformed(final ActionEvent e) {
         Engine.setAppRunning(false);
       }
     });
@@ -134,7 +135,7 @@ public class GUI {
     // attach a listner to the quit button that will make it restart the game
     // when clicked
     btn_restart.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
+      public void actionPerformed(final ActionEvent e) {
         Engine.setLosses(Engine.getLosses() + 1);
         textarea.append(
             "Restarting game - the correct number was: " +
@@ -147,7 +148,7 @@ public class GUI {
 
   // this method will the situation when any button is pressed. this method
   // takes a button and returns nothing
-  private void handleButtonPress(JButton button) {
+  private void handleButtonPress(final JButton button) {
     // if the text on the button pressed has the same value as the random number
     if (Integer.parseInt(button.getText()) == Engine.getCurrentRandomNumber()) {
       Engine.setWins(Engine.getWins() + 1); // add one to the wins

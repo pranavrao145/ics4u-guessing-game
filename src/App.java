@@ -11,7 +11,7 @@ Date: February 12, 2022
 
 public class App {
   // this is the entrypoint for the entire program
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     Engine.run(new GUI()); // create a new GUI and run a new Engine with it
   }
 }

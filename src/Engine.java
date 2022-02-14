@@ -12,6 +12,7 @@ Date: February 12, 2022
 
 // import the random class and the JButton Swing component
 import java.util.Random;
+
 import javax.swing.JButton;
 
 public class Engine {
@@ -38,7 +39,7 @@ public class Engine {
   // this is the initialize method. It will be called to start the
   // game. This method takes a GUI instance (generated in the App
   // class) and return nothing
-  private static void initialize(GUI currentGui) {
+  private static void initialize(final GUI currentGui) {
     appRunning = true;  // mark the app as running
     gameRunning = true; // mark a game as running
 
@@ -64,7 +65,7 @@ public class Engine {
     gui.getLbl_prompt().setText("Pick a number: ");
 
     // get an array of all the guess buttons from the GUI
-    JButton[] guessButtons = gui.getGuessButtons();
+    final JButton[] guessButtons = gui.getGuessButtons();
 
     // enable all buttons to reset whichever ones were disabled during
     // the game
@@ -108,33 +109,33 @@ public class Engine {
 
   // getters and setters
 
-  public static void setAppRunning(boolean appRunning) {
+  public static void setAppRunning(final boolean appRunning) {
     Engine.appRunning = appRunning;
   }
 
   public static boolean isGameRunning() { return gameRunning; }
 
-  public static void setGameRunning(boolean gameRunning) {
+  public static void setGameRunning(final boolean gameRunning) {
     Engine.gameRunning = gameRunning;
   }
 
   public static int getTriesLeft() { return triesLeft; }
 
-  public static void setTriesLeft(int triesLeft) {
+  public static void setTriesLeft(final int triesLeft) {
     Engine.triesLeft = triesLeft;
   }
 
   public static int getWins() { return wins; }
 
-  public static void setWins(int wins) { Engine.wins = wins; }
+  public static void setWins(final int wins) { Engine.wins = wins; }
 
   public static int getLosses() { return losses; }
 
-  public static void setLosses(int losses) { Engine.losses = losses; }
+  public static void setLosses(final int losses) { Engine.losses = losses; }
 
   public static int getCurrentRandomNumber() { return currentRandomNumber; }
 
-  public static void run(GUI currentGui) {
+  public static void run(final GUI currentGui) {
     initialize(currentGui);
     runMainEventLoop();
   }
