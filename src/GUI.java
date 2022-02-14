@@ -81,6 +81,8 @@ public class GUI {
 
     // add a scroll bar to the textarea
     scrollPane = new JScrollPane(textarea);
+
+    // add a label to prompt the user to pick a number
     panel.add(lbl_prompt);
 
     // add a scroll bar to the textarea
@@ -134,7 +136,10 @@ public class GUI {
     btn_restart.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Engine.setLosses(Engine.getLosses() + 1);
-        textarea.append("Restarting game...\n");
+        textarea.append(
+            "Restarting game - the correct number was: " +
+            Engine.getCurrentRandomNumber() +
+            "\n"); // inform the user that the game is over and they lost
         Engine.setGameRunning(false);
       }
     });
